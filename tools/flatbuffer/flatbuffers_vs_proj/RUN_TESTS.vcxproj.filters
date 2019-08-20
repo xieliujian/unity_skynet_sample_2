@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers_vs_proj\CMakeFiles\82dc87bafe3324b43284aa0cd57d9423\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{B36F749D-789B-34C4-A5E0-78CEB47A3FC9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

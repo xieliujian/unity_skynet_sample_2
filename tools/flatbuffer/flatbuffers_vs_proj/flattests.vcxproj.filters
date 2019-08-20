@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\src\code_generators.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\src\idl_parser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\src\idl_gen_text.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\src\reflection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\src\util.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\src\idl_gen_fbs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\tests\test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\tests\test_assert.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\tests\test_builder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\include\flatbuffers\code_generators.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\include\flatbuffers\base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\include\flatbuffers\flatbuffers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\include\flatbuffers\hash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\include\flatbuffers\idl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\include\flatbuffers\util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\include\flatbuffers\reflection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\include\flatbuffers\reflection_generated.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\include\flatbuffers\stl_emulation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\include\flatbuffers\flexbuffers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\include\flatbuffers\registry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\include\flatbuffers\minireflect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\tests\test_assert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\tests\test_builder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers_vs_proj\tests\monster_test_generated.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers_vs_proj\CMakeFiles\aaf85714e35ec29931754f4f6157779f\monster_test_generated.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{B36F749D-789B-34C4-A5E0-78CEB47A3FC9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{81B86068-60D3-3005-A7B4-ACD3DCD833BF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{AB42DBB9-098E-3936-BE7E-D7CAA61773CD}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

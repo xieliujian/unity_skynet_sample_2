@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\src\flathash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\include\flatbuffers\hash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Xieliujian\UnityFramework\trunk\Tools\flatbuffer\flatbuffers-1.11.0\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{81B86068-60D3-3005-A7B4-ACD3DCD833BF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{AB42DBB9-098E-3936-BE7E-D7CAA61773CD}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
