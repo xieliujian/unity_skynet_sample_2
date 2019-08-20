@@ -1,0 +1,6 @@
+root = "./"
+luaservice = root.."service/?.lua;"..root.."myexamples/e5/?.lua"
+lualoader = root .. "lualib/loader.lua"
+lua_path = root.."lualib/?.lua;"..root.."lualib/?/init.lua;"..root.."game/msg/fbs/?.lua;"..root.."myexamples/e5/?.lua"
+lua_cpath = root .. "luaclib/?.so"
+snax = root.."examples/?.lua;"..root.."test/?.lua"

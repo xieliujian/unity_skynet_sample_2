@@ -1,0 +1,10 @@
+
+
+namespace fbs;
+
+enum MsgId : uint16 
+{ 
+    ReqLogin = 1000,
+    RspLogin = 1001
+}
+

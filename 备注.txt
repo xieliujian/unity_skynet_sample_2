@@ -1,0 +1,27 @@
+
+
+rm -rf /Users/xieliujian/Desktop/xieliujian/unityframework.git/unity_skynet_sample_3.git
+
+cd /Users/xieliujian/Desktop/xieliujian/
+
+svn checkout https://github.com/xieliujian/unity_skynet_sample_3.git
+
+cd /Users/xieliujian/Desktop/xieliujian/unity_skynet_sample_3.git/trunk/server/skynet-1.2.0/
+
+make macosx
+
+svn add --non-recursive cservice
+cd /Users/xieliujian/Desktop/xieliujian/unity_skynet_sample_3.git/trunk/server/skynet-1.2.0/cservice
+svn add *.so
+
+cd /Users/xieliujian/Desktop/xieliujian/unity_skynet_sample_3.git/trunk/server/skynet-1.2.0/
+svn add --non-recursive luaclib
+cd /Users/xieliujian/Desktop/xieliujian/unity_skynet_sample_3.git/trunk/server/skynet-1.2.0/luaclib
+svn add *.so
+
+cd /Users/xieliujian/Desktop/xieliujian/unity_skynet_sample_3.git/trunk/server/skynet-1.2.0/
+svn add --non-recursive skynet
+
+cd /Users/xieliujian/Desktop/xieliujian/unity_skynet_sample_3.git/
+svn update
+svn commit -m "skynet compile"

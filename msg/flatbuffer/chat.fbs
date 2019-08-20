@@ -1,0 +1,12 @@
+
+namespace fbs;
+
+table ReqChat
+{
+    say:string;
+}
+
+table RspChat
+{
+    say:string;
+}
