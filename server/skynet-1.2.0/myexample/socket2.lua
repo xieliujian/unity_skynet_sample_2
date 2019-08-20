@@ -7,13 +7,6 @@
 local skynet = require "skynet"
 local socket = require "skynet.socket"
 
---local flatbuffers = require("flatbuffers");
-
---@type RspLogin
---local rsplogin = require "RspLogin";
---
---local reqlogin = require "ReqLogin";
-
 ---@type loginmodel
 local loginmodel = require "loginmodel"
 
@@ -32,57 +25,7 @@ local function echo(id)
     while true do
         local str = socket.read(id)
         if str then
-
             msgdispatcher.dispatcher(id, str);
-
-            --print("client say:" .. str)
-            --
-            --local builder = flatbuffers.Builder(1024)
-            --
-            --print("---------------------------------")
-            --local str1 = string.unpack("<H", str);
-            --print(str1);
-            --local str2 = string.unpack("<L", str);
-            --print(str2);
-            --
-            --print(str);
-            --
-            --local reqloginbuf = flatbuffers.binaryArray.New(str);
-            --
-            --local reqlogin = reqlogin.GetRootAsReqLogin(reqloginbuf, 2 + 8);
-            --print(reqlogin:Account());
-            --print(reqlogin:Password());
-            --
-            --print("---------------------------------")
-            --
-            --local account = builder:CreateString("wow");
-            --local password = builder:CreateString("skynet");
-            --
-            --rsplogin.Start(builder)
-            --rsplogin.AddAccount(builder, account)
-            --rsplogin.AddPassword(builder, password)
-            --rsplogin.AddIsok(builder, 1)
-            --local orc = rsplogin.End(builder);
-            --builder:Finish(orc);
-            --
-            --local bufAsString = builder:Output();
-            --
-            --local buflen = #bufAsString + 8;
-            --local msgid = rsplogin.HashID;
-            --
-            --print(""..buflen);
-            --print(""..msgid);
-            --
-            --local strwrite = string.pack("<HL", buflen, msgid);
-            --
-            --print(strwrite)
-            --
-            --strwrite = strwrite..bufAsString;
-            --
-            --print(strwrite)
-            --
-            -- 把一个字符串置入正常的写队列，skynet 框架会在 socket 可写时发送它。
-            --socket.write(id, strwrite)
         else
             socket.close(id)
             return ;

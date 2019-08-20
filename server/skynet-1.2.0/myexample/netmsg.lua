@@ -13,9 +13,7 @@ function netmsg.getEvents(msgid)
     return events[msgid];
 end
 
-function netmsg.AddListener(msg, handler)
-
-    local msgid = msg.HashID;
+function netmsg.AddListener(msgid, msg, handler)
 
     if not events[msgid] then
         --create the netmsg with name
@@ -34,9 +32,7 @@ function netmsg.Brocast(event, data)
     end
 end
 
-function netmsg.RemoveListener(msg, handler)
-
-    local msgid = msg.HashID;
+function netmsg.RemoveListener(msgid, msg, handler)
 
     if not events[msgid] then
         error("remove " .. msgid .. " has no event.")

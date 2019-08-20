@@ -8,17 +8,18 @@ local reqlogin = require("ReqLogin");
 ---@type RspLogin
 local rsplogin = require "RspLogin";
 
+local msgid = require "MsgId";
 
 ---@class loginmodel
 loginmodel = {}
 
 loginmodel.register = function()
 
-    msgdispatcher.registerFbMsg(reqlogin, loginmodel.reqlogin_cs);
+    msgdispatcher.registerFbMsg(msgid.ReqLogin, reqlogin, loginmodel.reqlogin_cs);
 end
 
 loginmodel.unRegister = function()
-    msgdispatcher.unRegisterFbMsg(reqlogin, loginmodel.reqlogin_cs);
+    msgdispatcher.unRegisterFbMsg(msgid.ReqLogin, reqlogin, loginmodel.reqlogin_cs);
 end
 
 -- 消息
@@ -37,7 +38,7 @@ loginmodel.reqlogin_cs = function(data)
     local orc = rsplogin.End(builder);
     builder:Finish(orc);
 
-    msgdispatcher.sendFbMsg(id, rsplogin);
+    msgdispatcher.sendFbMsg(id, msgid.RspLogin, rsplogin);
 end
 
 return loginmodel;

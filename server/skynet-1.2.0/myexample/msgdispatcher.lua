@@ -28,21 +28,20 @@ msgdispatcher.dispatcher = function(id, str)
 end
 
 -- fb消息注册
-msgdispatcher.registerFbMsg = function(msg, handler)
-    netmsg.AddListener(msg, handler);
+msgdispatcher.registerFbMsg = function(msgid, msg, handler)
+    netmsg.AddListener(msgid, msg, handler);
 end
 
 -- fb消息取消注册
-msgdispatcher.unRegisterFbMsg = function(msg, handler)
-    netmsg.RemoveListener(msg, handler);
+msgdispatcher.unRegisterFbMsg = function(msgid, msg, handler)
+    netmsg.RemoveListener(msgid, msg, handler);
 end
 
 -- 发送fb消息
-msgdispatcher.sendFbMsg = function(id, msg)
+msgdispatcher.sendFbMsg = function(id, msgid, msg)
 
     local bufAsString = msgdispatcher.builder:Output();
     local buflen = #bufAsString + 8;
-    local msgid = msg.HashID;
     local strwrite = string.pack("<HL", buflen, msgid);
     strwrite = strwrite .. bufAsString;
 

@@ -1,6 +1,6 @@
 include "config.path"
 
--- preload = "./myexamples/e5/preload.lua"	-- run preload.lua before every lua service run
+-- preload = "./myexample/preload.lua"	-- run preload.lua before every lua service run
 thread = 8
 logger = nil
 logpath = "."
