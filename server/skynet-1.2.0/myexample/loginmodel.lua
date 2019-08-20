@@ -28,9 +28,12 @@ loginmodel.reqlogin_cs = function(data)
     local id = data.id;
     local reqlogindata = data.msg;
 
+    print(reqlogindata:Account())
+    --print(reqlogindata:Password())
+
     local builder = msgdispatcher.builder;
-    local account = builder:CreateString(reqlogindata:Account().." wow");
-    local password = builder:CreateString(reqlogindata:Password().." skynet");
+    local account = builder:CreateString(reqlogindata:Account().." wow魔兽");
+    local password = builder:CreateString(reqlogindata:Password().." skynet云风");
 
     rsplogin.Start(builder)
     rsplogin.AddAccount(builder, account)

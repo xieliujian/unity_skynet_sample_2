@@ -28,7 +28,7 @@ chatmodel.reqchat_cs = function(data)
     local reqchat = data.msg;
 
     local builder = msgdispatcher.builder;
-    local say = builder:CreateString(reqchat:Say().." wow");
+    local say = builder:CreateString(reqchat:Say().." balabala说话");
 
     rspchat.Start(builder);
     rspchat.AddSay(builder, say);

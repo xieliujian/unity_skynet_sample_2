@@ -51,18 +51,18 @@ end
 -- fb消息分发
 msgdispatcher.dispatcherFbMsg = function(id, str)
 
+    --print(str)
+
     local msglen = string.unpack("<H", str);
 
     -- string.unpack默认是1
     local msgid = string.unpack("<L", str, 2 + 1);
     local msgoffset = 2 + 8;
 
-    local msgbuf = flatbuffers.binaryArray.New(str);
+    print(""..msglen)
+    print(""..msgid)
 
-    print(""..msglen);
-    print(""..msgid);
-    print(""..#str);
-    print(str);
+    local msgbuf = flatbuffers.binaryArray.New(str);
 
     local eventlib = netmsg.getEvents(msgid);
     if not eventlib then
