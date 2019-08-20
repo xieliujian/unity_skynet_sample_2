@@ -9,6 +9,8 @@ public enum MsgId : ushort
 {
  ReqLogin = 1000,
  RspLogin = 1001,
+ ReqChat = 1002,
+ RspChat = 1003,
 };
 
 

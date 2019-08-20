@@ -5,6 +5,8 @@ namespace fbs;
 enum MsgId : uint16 
 { 
     ReqLogin = 1000,
-    RspLogin = 1001
+    RspLogin = 1001,
+    ReqChat = 1002,
+    RspChat = 1003
 }
 
