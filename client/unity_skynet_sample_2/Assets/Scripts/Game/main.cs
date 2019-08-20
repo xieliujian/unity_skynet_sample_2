@@ -57,27 +57,27 @@ namespace gtmGame
         private void SendChatMsg()
         {
             var builder = IMsgDispatcher.instance.flatBufferBuilder;
-            var say = builder.CreateString("11111111111");
+            var say = builder.CreateString("说话Say xiexie xiexie xiexie xiexie说话说话说话说话说话说话说话说话说话说话说话说话");
             fbs.ReqChat.StartReqChat(builder);
             fbs.ReqChat.AddSay(builder, say);
             var orc = fbs.ReqChat.EndReqChat(builder);
             builder.Finish(orc.Value);
 
-            IMsgDispatcher.instance.SendFBMsg((ulong)fbs.MsgId.ReqLogin, builder);
+            IMsgDispatcher.instance.SendFBMsg((ulong)fbs.MsgId.ReqChat, builder);
         }
 
         private void SendLoginMsg()
         {
             var builder = IMsgDispatcher.instance.flatBufferBuilder;
-            var account = builder.CreateString("xiexie");
-            var password = builder.CreateString("123456");
+            var account = builder.CreateString("xiexie xiexie xiexie xiexie");
+            var password = builder.CreateString("xiexie 123456 xiexie xiexie");
             fbs.ReqLogin.StartReqLogin(builder);
             fbs.ReqLogin.AddAccount(builder, account);
             fbs.ReqLogin.AddPassword(builder, password);
             var orc = fbs.ReqLogin.EndReqLogin(builder);
             builder.Finish(orc.Value);
 
-            IMsgDispatcher.instance.SendFBMsg((ulong)fbs.MsgId.ReqChat, builder);
+            IMsgDispatcher.instance.SendFBMsg((ulong)fbs.MsgId.ReqLogin, builder);
         }
     }
 }
