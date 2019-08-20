@@ -12,7 +12,6 @@ public struct RspChat : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
-  public const ulong HashID = 0xA3C3784A8BA2A226;
   public static RspChat GetRootAsRspChat(ByteBuffer _bb) { return GetRootAsRspChat(_bb, new RspChat()); }
   public static RspChat GetRootAsRspChat(ByteBuffer _bb, RspChat obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
   public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }

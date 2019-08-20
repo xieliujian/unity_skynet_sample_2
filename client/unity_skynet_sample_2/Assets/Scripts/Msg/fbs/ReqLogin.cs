@@ -12,7 +12,6 @@ public struct ReqLogin : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
-  public const ulong HashID = 0x0CDFF5EC2B4610A6;
   public static ReqLogin GetRootAsReqLogin(ByteBuffer _bb) { return GetRootAsReqLogin(_bb, new ReqLogin()); }
   public static ReqLogin GetRootAsReqLogin(ByteBuffer _bb, ReqLogin obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
   public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }

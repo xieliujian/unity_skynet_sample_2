@@ -9,7 +9,6 @@ local ReqChat = {} -- the module
 
 local ReqChat_mt = {} -- the class metatable
 
-ReqChat.HashID = 0x9291D76D5CC9BF89;
 
 function ReqChat.New()
     local o = {}

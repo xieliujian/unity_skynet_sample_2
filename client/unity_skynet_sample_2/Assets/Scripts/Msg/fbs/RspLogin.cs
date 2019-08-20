@@ -12,7 +12,6 @@ public struct RspLogin : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
-  public const ulong HashID = 0xE27BEEB0F9378B13;
   public static RspLogin GetRootAsRspLogin(ByteBuffer _bb) { return GetRootAsRspLogin(_bb, new RspLogin()); }
   public static RspLogin GetRootAsRspLogin(ByteBuffer _bb, RspLogin obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
   public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }

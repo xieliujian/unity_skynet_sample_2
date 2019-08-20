@@ -12,7 +12,6 @@ public struct ReqChat : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
-  public const ulong HashID = 0x9291D76D5CC9BF89;
   public static ReqChat GetRootAsReqChat(ByteBuffer _bb) { return GetRootAsReqChat(_bb, new ReqChat()); }
   public static ReqChat GetRootAsReqChat(ByteBuffer _bb, ReqChat obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
   public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }

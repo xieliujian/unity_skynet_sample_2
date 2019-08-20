@@ -9,7 +9,6 @@ local RspChat = {} -- the module
 
 local RspChat_mt = {} -- the class metatable
 
-RspChat.HashID = 0xA3C3784A8BA2A226;
 
 function RspChat.New()
     local o = {}
