@@ -52,9 +52,9 @@ namespace gtmInterface
 
         public abstract void Dispatcher(ulong msgid, byte[] bytearray);
 
-        public virtual void RegisterFBMsg<T>(MsgProcDelegate<T> fbfunc) where T : struct, FlatBuffers.IFlatbufferObject { }
+        public virtual void RegisterFBMsg<T>(ulong msgid, MsgProcDelegate<T> fbfunc) where T : struct, FlatBuffers.IFlatbufferObject { }
         
-        public virtual void UnRegisterFBMsg<T>(MsgProcDelegate<T> fbfunc) where T : struct, FlatBuffers.IFlatbufferObject { }
+        public virtual void UnRegisterFBMsg<T>(ulong msgid, MsgProcDelegate<T> fbfunc) where T : struct, FlatBuffers.IFlatbufferObject { }
 
         public virtual void SendFBMsg(ulong msgid, FlatBufferBuilder builder) { }
     }

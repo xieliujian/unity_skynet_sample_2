@@ -14,12 +14,12 @@ namespace gtmGame
 
         public void DoInit()
         {
-            IMsgDispatcher.instance.RegisterFBMsg<fbs.RspLogin>(RspLogin_SC);
+            IMsgDispatcher.instance.RegisterFBMsg<fbs.RspLogin>((ulong)fbs.MsgId.RspLogin, RspLogin_SC);
         }
 
         public void DoClose()
         {
-            IMsgDispatcher.instance.UnRegisterFBMsg<fbs.RspLogin>(RspLogin_SC);
+            IMsgDispatcher.instance.UnRegisterFBMsg<fbs.RspLogin>((ulong)fbs.MsgId.RspLogin, RspLogin_SC);
         }
 
         public void DoUpdate()

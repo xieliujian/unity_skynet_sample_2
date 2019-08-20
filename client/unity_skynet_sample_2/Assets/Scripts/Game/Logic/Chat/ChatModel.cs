@@ -11,12 +11,12 @@ namespace gtmGame
 
         public void DoClose()
         {
-            IMsgDispatcher.instance.UnRegisterFBMsg<fbs.RspChat>(RspChat_SC);
+            IMsgDispatcher.instance.UnRegisterFBMsg<fbs.RspChat>((ulong)fbs.MsgId.RspChat, RspChat_SC);
         }
 
         public void DoInit()
         {
-            IMsgDispatcher.instance.RegisterFBMsg<fbs.RspChat>(RspChat_SC);
+            IMsgDispatcher.instance.RegisterFBMsg<fbs.RspChat>((ulong)fbs.MsgId.RspChat, RspChat_SC);
         }
 
         public void DoUpdate()

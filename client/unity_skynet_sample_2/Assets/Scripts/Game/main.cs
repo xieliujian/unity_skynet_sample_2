@@ -16,7 +16,7 @@ namespace gtmGame
 
         private ChatModel m_chatModel = new ChatModel();
 
-        public string ipaddress = "192.168.0.104";
+        public string ipaddress = "192.168.0.102";
 
         // Start is called before the first frame update
         void Start()
@@ -63,7 +63,7 @@ namespace gtmGame
             var orc = fbs.ReqChat.EndReqChat(builder);
             builder.Finish(orc.Value);
 
-            IMsgDispatcher.instance.SendFBMsg(fbs.ReqChat.HashID, builder);
+            IMsgDispatcher.instance.SendFBMsg((ulong)fbs.MsgId.ReqLogin, builder);
         }
 
         private void SendLoginMsg()
@@ -77,7 +77,7 @@ namespace gtmGame
             var orc = fbs.ReqLogin.EndReqLogin(builder);
             builder.Finish(orc.Value);
 
-            IMsgDispatcher.instance.SendFBMsg(fbs.ReqLogin.HashID, builder);
+            IMsgDispatcher.instance.SendFBMsg((ulong)fbs.MsgId.ReqChat, builder);
         }
     }
 }

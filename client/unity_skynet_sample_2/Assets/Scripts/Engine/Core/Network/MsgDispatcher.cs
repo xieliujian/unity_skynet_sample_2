@@ -86,30 +86,24 @@ namespace gtmEngine
         {
             
         }
-        public override void RegisterFBMsg<T>(MsgProcDelegate<T> fbfunc)
+        public override void RegisterFBMsg<T>(ulong msgid, MsgProcDelegate<T> fbfunc)
         {
             Type type = typeof(T);
-            FieldInfo fieldInfo = type.GetField("HashID", BindingFlags.Static | BindingFlags.Public);
-            ulong hashid = (ulong)fieldInfo.GetValue(null);
 
             IFlatBufferProcFun exist;
-            if (m_fbMsgProcDict.TryGetValue(hashid, out exist))
+            if (m_fbMsgProcDict.TryGetValue(msgid, out exist))
             {
                 ILogSystem.instance.LogError(LogCategory.GameEngine, "FBMsgProc Exist! " + type.Name);
             }
             else
             {
-                m_fbMsgProcDict.Add(hashid, new FlatBufferProcFun<T>(fbfunc));
+                m_fbMsgProcDict.Add(msgid, new FlatBufferProcFun<T>(fbfunc));
             }
         }
 
-        public override void UnRegisterFBMsg<T>(MsgProcDelegate<T> fbfunc)
+        public override void UnRegisterFBMsg<T>(ulong msgid, MsgProcDelegate<T> fbfunc)
         {
-            Type type = typeof(T);
-            FieldInfo fieldInfo = type.GetField("HashID");
-            ulong hashid = (ulong)fieldInfo.GetValue(null);
-
-            m_fbMsgProcDict.Remove(hashid);
+            m_fbMsgProcDict.Remove(msgid);
         }
 
         public override void SendFBMsg(ulong msgid, FlatBufferBuilder builder)
