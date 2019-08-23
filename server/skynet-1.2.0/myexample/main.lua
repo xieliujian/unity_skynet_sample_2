@@ -6,6 +6,8 @@
 ---
 local skynet = require "skynet"
 
+local netpack = require "skynet.netpack"
+
 -- 启动服务(启动函数)
 skynet.start(function()
 

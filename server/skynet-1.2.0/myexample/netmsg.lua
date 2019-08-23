@@ -10,13 +10,7 @@ local netmsg = {}
 netmsg.events = {}
 
 function netmsg.getEvents(msgid)
-
-    for id, event in pairs(netmsg.events) do
-        print("netmsg "..id);
-    end
-
-    print("netmsg "..#netmsg.events);
-
+    
     return netmsg.events[msgid];
 end
 

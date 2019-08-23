@@ -6,7 +6,6 @@
 
 local skynet = require "skynet"
 local gateserver = require "snax.gateserver"
-local netpack = require "skynet.netpack"
 
 local handler = {}
 local CMD = {}
@@ -42,7 +41,7 @@ function handler.message(fd, msg, sz)
 
     --local agent = agents[fd]
     --skynet.redirect(agent, 0, "client", 0, msg, sz)
-    
+
     local msgregister = skynet.queryservice "msgregister"
     skynet.call(msgregister, "lua", "dipatcher", fd, msg, sz)
 end

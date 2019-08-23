@@ -7,6 +7,9 @@ local netmsg = require 'netmsg'
 ---@type socket
 local socket = require "skynet.socket"
 
+---@type netpack
+local netpack = require "skynet.netpack"
+
 ---@class msgdispatcher
 msgdispatcher = {
     print(debug.traceback())
@@ -52,7 +55,9 @@ msgdispatcher.sendFbMsg = function(id, msgid, msg)
 end
 
 -- fb消息分发
-msgdispatcher.dispatcherFbMsg = function(id, str)
+msgdispatcher.dispatcherFbMsg = function(id, msg, sz)
+
+    local str = netpack.tostring(msg, sz);
 
     -- string.unpack默认是1
     local msgid = string.unpack("<L", str);
@@ -60,28 +65,20 @@ msgdispatcher.dispatcherFbMsg = function(id, str)
 
     local msgbuf = flatbuffers.binaryArray.New(str);
 
-    print("1111111111111111111111  " .. msgid)
-
     local eventlib = netmsg.getEvents(msgid);
     if not eventlib then
         return ;
     end
-
-    print("22222222222222222222222222")
 
     local msgclass = eventlib.event;
     if not msgclass then
         return ;
     end
 
-    print("33333333333333333333333333")
-
     local msg = msgclass.init(msgbuf, msgoffset);
     if not msg then
         return ;
     end
-
-    print("4444444444444444444444444444")
 
     local data = {};
     data.id = id;

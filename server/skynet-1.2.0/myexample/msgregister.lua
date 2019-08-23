@@ -4,8 +4,6 @@ local skynet = require "skynet"
 
 local service = require "service"
 
-local netpack = require "skynet.netpack"
-
 local msgdispatcher = require "msgdispatcher"
 
 local chatmodel = require "chatmodel"
@@ -24,8 +22,7 @@ function msgregister.register()
 end
 
 function msgregister.dipatcher(client_fd, msg, sz)
-    local realstr = netpack.tostring(msg, sz);
-    msgdispatcher.dispatcherFbMsg(client_fd, realstr);
+    msgdispatcher.dispatcherFbMsg(client_fd, msg, sz);
 end
 
 service.init {
