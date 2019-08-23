@@ -24,8 +24,6 @@ namespace gtmGame
             m_gameMgr.DoInit();
             m_loginModel.DoInit();
             m_chatModel.DoInit();
-
-            NetManager.instance.SendConnect(ipaddress, 8888);
         }
 
         // Update is called once per frame
@@ -43,21 +41,34 @@ namespace gtmGame
 
         private void OnGUI()
         {
-            if (GUI.Button(new Rect(0, 0, 300, 200), "SendLoginMsg"))
+
+            if (GUI.Button(new Rect(0, 0, 300, 100), "SendConnect"))
+            {
+                SendConnect();
+            }
+
+            if (GUI.Button(new Rect(0, 100, 300, 100), "SendLoginMsg"))
             {
                 SendLoginMsg();
             }
 
-            if (GUI.Button(new Rect(0, 200, 300, 200), "SendChatMsg"))
+            if (GUI.Button(new Rect(0, 200, 300, 100), "SendChatMsg"))
             {
                 SendChatMsg();
             }
         }
 
+        private void SendConnect()
+        {
+            INetManager.instance.SendConnect(ipaddress, 8888);
+        }
+
         private void SendChatMsg()
         {
             var builder = IMsgDispatcher.instance.flatBufferBuilder;
-            var say = builder.CreateString("说话Say xiexie xiexie xiexie xiexie说话说话说话说话说话说话说话说话说话说话说话说话");
+            var say = builder.CreateString("白日依山尽，黄河入海流。欲穷千里目，更上一层楼。" +
+                "红豆生南国，春来发几枝。愿君多采撷，此物最相思。" +
+                "松下问童子，言师采药去。只在此山中，云深不知处。");
             fbs.ReqChat.StartReqChat(builder);
             fbs.ReqChat.AddSay(builder, say);
             var orc = fbs.ReqChat.EndReqChat(builder);
@@ -69,8 +80,12 @@ namespace gtmGame
         private void SendLoginMsg()
         {
             var builder = IMsgDispatcher.instance.flatBufferBuilder;
-            var account = builder.CreateString("xiexie xiexie xiexie xiexie");
-            var password = builder.CreateString("xiexie 123456 xiexie xiexie");
+            var account = builder.CreateString("白日依山尽，黄河入海流。欲穷千里目，更上一层楼。" +
+                "红豆生南国，春来发几枝。愿君多采撷，此物最相思。" +
+                "松下问童子，言师采药去。只在此山中，云深不知处。");
+            var password = builder.CreateString("白日依山尽，黄河入海流。欲穷千里目，更上一层楼。" +
+                "红豆生南国，春来发几枝。愿君多采撷，此物最相思。" +
+                "松下问童子，言师采药去。只在此山中，云深不知处。");
             fbs.ReqLogin.StartReqLogin(builder);
             fbs.ReqLogin.AddAccount(builder, account);
             fbs.ReqLogin.AddPassword(builder, password);

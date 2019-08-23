@@ -112,7 +112,8 @@ namespace gtmEngine
 
             gtmInterface.ByteBuffer buff = new gtmInterface.ByteBuffer();
             UInt16 lengh = (UInt16)(bytearray.Length + sizeof(ulong));
-            buff.WriteShort(lengh);
+            UInt16 biglen = Converter.GetBigEndian(lengh);
+            buff.WriteShort(biglen);
             buff.WriteUlong(msgid);
             buff.WriteBytes(bytearray);
 
