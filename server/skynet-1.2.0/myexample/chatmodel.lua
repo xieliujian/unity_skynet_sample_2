@@ -14,6 +14,8 @@ local msgid = require "MsgId";
 chatmodel = {}
 
 chatmodel.register = function()
+    print("chatmodel.register")
+
     msgdispatcher.registerFbMsg(msgid.ReqChat, reqchat, chatmodel.reqchat_cs);
 end
 
@@ -23,6 +25,7 @@ end
 
 -- 消息
 chatmodel.reqchat_cs = function(data)
+    print("chatmodel.reqchat_cs")
 
     local id = data.id;
     local reqchat = data.msg;

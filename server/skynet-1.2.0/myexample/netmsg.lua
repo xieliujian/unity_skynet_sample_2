@@ -6,38 +6,45 @@ like Unity Brocast netmsg System in lua.
 local EventLib = require "eventlib"
 
 local netmsg = {}
-local events = {}
+
+netmsg.events = {}
 
 function netmsg.getEvents(msgid)
 
-    return events[msgid];
+    for id, event in pairs(netmsg.events) do
+        print("netmsg "..id);
+    end
+
+    print("netmsg "..#netmsg.events);
+
+    return netmsg.events[msgid];
 end
 
 function netmsg.AddListener(msgid, msg, handler)
 
-    if not events[msgid] then
+    if not netmsg.events[msgid] then
         --create the netmsg with name
-        events[msgid] = EventLib:new(msgid, msg)
+        netmsg.events[msgid] = EventLib:new(msgid, msg)
     end
 
     --conn this handler
-    events[msgid]:connect(handler)
+    netmsg.events[msgid]:connect(handler)
 end
 
 function netmsg.Brocast(event, data)
-    if not events[event] then
+    if not netmsg.events[event] then
         error("brocast " .. event .. " has no event.")
     else
-        events[event]:fire(data)
+        netmsg.events[event]:fire(data)
     end
 end
 
 function netmsg.RemoveListener(msgid, msg, handler)
 
-    if not events[msgid] then
+    if not netmsg.events[msgid] then
         error("remove " .. msgid .. " has no event.")
     else
-        events[msgid]:disconnect(handler)
+        netmsg.events[msgid]:disconnect(handler)
     end
 end
 

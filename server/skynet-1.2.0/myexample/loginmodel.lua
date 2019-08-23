@@ -1,9 +1,9 @@
 
 ---@type msgdispatcher
-local msgdispatcher = require("msgdispatcher");
+local msgdispatcher = require "msgdispatcher";
 
 --- @type ReqLogin
-local reqlogin = require("ReqLogin");
+local reqlogin = require "ReqLogin";
 
 ---@type RspLogin
 local rsplogin = require "RspLogin";
@@ -14,6 +14,7 @@ local msgid = require "MsgId";
 loginmodel = {}
 
 loginmodel.register = function()
+    print("loginmodel.register")
 
     msgdispatcher.registerFbMsg(msgid.ReqLogin, reqlogin, loginmodel.reqlogin_cs);
 end
@@ -24,6 +25,8 @@ end
 
 -- 消息
 loginmodel.reqlogin_cs = function(data)
+
+    print("loginmodel.reqlogin_cs")
 
     local id = data.id;
     local reqlogindata = data.msg;

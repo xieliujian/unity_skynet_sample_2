@@ -8,7 +8,9 @@ local netmsg = require 'netmsg'
 local socket = require "skynet.socket"
 
 ---@class msgdispatcher
-msgdispatcher = {}
+msgdispatcher = {
+    print(debug.traceback())
+}
 
 msgdispatcher.msgType = {
     flatbuffer = 0,
@@ -52,33 +54,34 @@ end
 -- fb消息分发
 msgdispatcher.dispatcherFbMsg = function(id, str)
 
-    --print(str)
-
-    local msglen = string.unpack("<H", str);
-
     -- string.unpack默认是1
-    local msgid = string.unpack("<L", str, 2 + 1);
-    local msgoffset = 2 + 8;
-
-    print(""..msglen)
-    print(""..msgid)
+    local msgid = string.unpack("<L", str);
+    local msgoffset = 8;
 
     local msgbuf = flatbuffers.binaryArray.New(str);
+
+    print("1111111111111111111111  " .. msgid)
 
     local eventlib = netmsg.getEvents(msgid);
     if not eventlib then
         return ;
     end
 
+    print("22222222222222222222222222")
+
     local msgclass = eventlib.event;
     if not msgclass then
         return ;
     end
 
+    print("33333333333333333333333333")
+
     local msg = msgclass.init(msgbuf, msgoffset);
     if not msg then
         return ;
     end
+
+    print("4444444444444444444444444444")
 
     local data = {};
     data.id = id;

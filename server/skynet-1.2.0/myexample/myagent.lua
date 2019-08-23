@@ -2,8 +2,6 @@ local skynet = require "skynet"
 local netpack = require "skynet.netpack"
 local socket = require "skynet.socket"
 
-local msgdispatcher = require "msgdispatcher"
-
 local client_fd = ...
 client_fd = tonumber(client_fd)
 
@@ -16,9 +14,7 @@ skynet.register_protocol {
 }
 
 local function task(msg)
-    print("recv from fd", client_fd, msg)
-
-    msgdispatcher.dispatcherFbMsg(client_fd, msg);
+    --print("recv from fd", client_fd, msg)
 end
 
 skynet.start(function()

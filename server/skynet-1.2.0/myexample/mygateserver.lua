@@ -11,6 +11,7 @@ local netpack = require "skynet.netpack"
 local handler = {}
 local CMD = {}
 local agents = {}
+
 --注册client消息专门用来将接收到的网络数据转发给agent,不需要解包，也不需要打包
 skynet.register_protocol {
     name = "client",
@@ -38,8 +39,12 @@ function handler.disconnect(fd)
 end
 
 function handler.message(fd, msg, sz)
-    local agent = agents[fd]
-    skynet.redirect(agent, 0, "client", 0, msg, sz) --收到消息就转发给agent
+
+    --local agent = agents[fd]
+    --skynet.redirect(agent, 0, "client", 0, msg, sz)
+    
+    local msgregister = skynet.queryservice "msgregister"
+    skynet.call(msgregister, "lua", "dipatcher", fd, msg, sz)
 end
 
 function handler.error(fd, msg)

@@ -13,7 +13,7 @@ skynet.start(function()
     print("======Server start=======")
 
     local msgregister = skynet.uniqueservice "msgregister"
-    skynet.call(msgregister, "lua", "register")
+    skynet.call(msgregister, "lua", "register", "")
 
     local gateserver = skynet.newservice("mygateserver") --启动刚才写的网关服务
 
