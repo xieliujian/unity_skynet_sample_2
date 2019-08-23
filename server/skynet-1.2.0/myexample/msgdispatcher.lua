@@ -41,11 +41,12 @@ end
 msgdispatcher.sendFbMsg = function(id, msgid, msg)
 
     local bufAsString = msgdispatcher.builder:Output();
-    local buflen = #bufAsString + 8;
-    local strwrite = string.pack("<HL", buflen, msgid);
+    local strwrite = string.pack("<L", msgid);
     strwrite = strwrite .. bufAsString;
 
-    socket.write(id, strwrite)
+    local package = string.pack("<s2", strwrite)
+
+    socket.write(id, package)
 end
 
 -- fb消息分发

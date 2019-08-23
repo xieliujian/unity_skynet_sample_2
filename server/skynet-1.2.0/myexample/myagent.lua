@@ -2,6 +2,8 @@ local skynet = require "skynet"
 local netpack = require "skynet.netpack"
 local socket = require "skynet.socket"
 
+local msgdispatcher = require "msgdispatcher"
+
 local client_fd = ...
 client_fd = tonumber(client_fd)
 
@@ -16,24 +18,7 @@ skynet.register_protocol {
 local function task(msg)
     print("recv from fd", client_fd, msg)
 
-    local reqmsgid = string.unpack("<L", msg);
-    local msgoffset = 8;
-    local reqstr = string.sub(msg, msgoffset + 1);
-
-    print("" .. reqmsgid);
-    print(reqstr);
-
-    -- rspmsg
-    local rspstr = "Say(说) : " .. reqstr;
-    local rspmsgid = 10001;
-
-    local pack = string.pack("<L", rspmsgid);
-    pack = pack .. rspstr;
-
-    local package = string.pack("<s2", pack)
-
-    --响应消息的时候直接通过fd发送出去
-    socket.write(client_fd, package)
+    msgdispatcher.dispatcherFbMsg(client_fd, msg);
 end
 
 skynet.start(function()
