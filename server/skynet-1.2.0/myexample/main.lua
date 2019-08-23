@@ -12,6 +12,9 @@ skynet.start(function()
     -- 启动函数里调用Skynet API开发各种服务
     print("======Server start=======")
 
+    local msgregister = skynet.uniqueservice "msgregister"
+    skynet.call(msgregister, "lua", "register")
+
     local gateserver = skynet.newservice("mygateserver") --启动刚才写的网关服务
 
     skynet.call(gateserver, "lua", "open", {--需要给网关服务发送open消息，来启动监听
