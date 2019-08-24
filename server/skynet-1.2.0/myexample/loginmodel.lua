@@ -32,7 +32,7 @@ loginmodel.reqlogin_cs = function(data)
     local reqlogindata = data.msg;
 
     print(reqlogindata:Account())
-    --print(reqlogindata:Password())
+    print(reqlogindata:Password())
 
     local builder = msgdispatcher.builder;
     local account = builder:CreateString(reqlogindata:Account().." wow魔兽");

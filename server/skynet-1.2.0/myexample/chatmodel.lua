@@ -30,6 +30,8 @@ chatmodel.reqchat_cs = function(data)
     local id = data.id;
     local reqchat = data.msg;
 
+    print(reqchat:Say());
+
     local builder = msgdispatcher.builder;
     local say = builder:CreateString(reqchat:Say().." balabala说话");
 
