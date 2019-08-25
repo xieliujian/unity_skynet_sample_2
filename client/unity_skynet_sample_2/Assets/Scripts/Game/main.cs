@@ -16,7 +16,7 @@ namespace gtmGame
 
         private ChatModel m_chatModel = new ChatModel();
 
-        public string ipaddress = "192.168.0.102";
+        public string ipaddress = "192.168.0.108";
 
         // Start is called before the first frame update
         void Start()
