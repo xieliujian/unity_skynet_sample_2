@@ -12,7 +12,7 @@ local netpack = require "skynet.netpack"
 
 ---@class msgdispatcher
 msgdispatcher = {
-    print(debug.traceback())
+    --print(debug.traceback())
 }
 
 msgdispatcher.msgType = {
